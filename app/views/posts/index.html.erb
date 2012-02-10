@@ -1,0 +1,11 @@
+<%= render :partial => "message_form" %>
+<div id="posts">
+	<%= render :partial => @posts %>
+</div>
+<script>
+jQuery('#postsd .approve').hover(function(){
+	$(this).animate( {
+		'height': $(this).height() == 40 ? "20px" : "40px"
+	}, 250);
+});
+</script>

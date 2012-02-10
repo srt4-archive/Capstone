@@ -1,0 +1,30 @@
+<% div_for post do %>  
+	<div class="left">
+		<div class="approve">
+			<% if logged_in? %>
+			<% form_remote_for [post, Vote.new] do |f| %>
+				<%= f.submit "approve" %>
+			<% end %>
+			<% end %>			
+			<%= post.votes.count %>
+		</div>
+		
+		<div class="arrow-down"></div>
+	</div>
+	<div class="right">
+		<div class="post-date"><b>Posted <%= time_ago_in_words(post.created_at) %> ago</b></div>  
+		<div class="route"><%= post.route %></div> 
+		<div class="issue"><%= post.message %></div>  
+		<div class="username">by: <%= post.user.username %></div>
+		<div>
+	 	<% if logged_in? %>		
+		<% form_remote_for [post, Comment.new] do |f| %>
+				<%= f.text_field :body %>
+				<%= f.submit "Add Comment" %>
+		<% end %>
+		<% end %>
+		<%= post.num_comments %>
+		</div>
+	</div>
+	<div style="clear:both"></div>
+<% end %>  

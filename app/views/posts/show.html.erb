@@ -1,0 +1,8 @@
+<%= @post.user.username %>
+
+<% @post.comments.each do |c| %>
+		<%= c.body %>
+		 by 
+		<%= c.user == nil ? "Anonymous" : c.user.username %>
+		<br />
+<% end %>

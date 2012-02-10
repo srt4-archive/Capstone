@@ -1,0 +1,10 @@
+<% if logged_in? %>
+	<% form_remote_tag(:controller => "posts", :action => "create") do %>  
+	<%= label_tag(:message, "What is the issue?") %><br />
+	<%= text_area_tag(:message, nil, :size => "44x6") %><br />
+	<%= label_tag(:route, "What route number?") %><br />
+	<%= text_area_tag(:route, nil, :size => "44x1") %><br />
+	
+	<%= submit_tag("Update") %>  
+	<% end %>
+<% end %>

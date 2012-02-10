@@ -1,0 +1,13 @@
+<p>
+  <b>User:</b>
+  <%=h @vote.user %>
+</p>
+
+<p>
+  <b>Post:</b>
+  <%=h @vote.post %>
+</p>
+
+
+<%= link_to 'Edit', edit_vote_path(@vote) %> |
+<%= link_to 'Back', votes_path %>
